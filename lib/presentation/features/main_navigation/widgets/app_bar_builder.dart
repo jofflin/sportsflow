@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sportsflow/presentation/features/core/blocs/auth_bloc/auth_bloc.dart';
 
 import '../../../../resources/components/components.dart';
 import '../../../../domain/entities/user/current_user.dart';
-import '../../app/bloc/app_bloc.dart';
 import '../bloc/main_navigation_bloc.dart';
 
 class AppBarBuilder extends StatelessWidget implements PreferredSizeWidget {
@@ -17,7 +17,8 @@ class AppBarBuilder extends StatelessWidget implements PreferredSizeWidget {
     return BlocBuilder<MainNavigationBloc, MainNavigationState>(
       builder: (context, state) {
         //BUG: Fix for different States then Success
-        UserEntity user = (context.read<AppBloc>().state as Authenticated).user;
+        UserEntity user =
+            (context.read<AuthBloc>().state as Authenticated).user;
         return state.when(
           mainPageSelected: (destination) => SportsFlowMainPageAppBar(
             userName: user.username,

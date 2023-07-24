@@ -1,8 +1,6 @@
 /// Make sure to import `auto_route` and `material` (required)
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:sportsflow/presentation/features/app/app.dart';
-import 'package:sportsflow/presentation/features/app/pages/pages.dart';
 import 'package:sportsflow/presentation/features/onboarding/pages/onboarding_page.dart';
 import 'package:sportsflow/presentation/features/main_navigation/pages/pages.dart';
 import 'package:sportsflow/presentation/features/login/login.dart';

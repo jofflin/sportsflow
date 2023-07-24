@@ -23,7 +23,7 @@ import 'package:sportsflow/data/repositories/authentication_repository_impl.dart
     as _i13;
 import 'package:sportsflow/data/repositories/settings_repository_impl.dart'
     as _i19;
-import 'package:sportsflow/dependency_injection.dart' as _i35;
+import 'package:sportsflow/dependency_injection.dart' as _i34;
 import 'package:sportsflow/domain/repositories/authentication_repository.dart'
     as _i12;
 import 'package:sportsflow/domain/repositories/repositories.dart' as _i17;
@@ -41,25 +41,23 @@ import 'package:sportsflow/domain/usecases/auth_manager/sign_out.dart' as _i24;
 import 'package:sportsflow/domain/usecases/auth_manager/sign_up_with_email.dart'
     as _i25;
 import 'package:sportsflow/domain/usecases/settings/listen_to_locale.dart'
-    as _i29;
+    as _i28;
 import 'package:sportsflow/domain/usecases/settings/listen_to_theme_mode.dart'
-    as _i30;
-import 'package:sportsflow/domain/usecases/settings/save_locale.dart' as _i31;
+    as _i29;
+import 'package:sportsflow/domain/usecases/settings/save_locale.dart' as _i30;
 import 'package:sportsflow/domain/usecases/settings/save_theme_mode.dart'
-    as _i32;
+    as _i31;
 import 'package:sportsflow/domain/usecases/user_manager/get_user.dart' as _i15;
 import 'package:sportsflow/domain/usecases/user_manager/listen_to_auth_status.dart'
     as _i16;
 import 'package:sportsflow/domain/usecases/user_manager/user_manager.dart'
     as _i27;
-import 'package:sportsflow/presentation/features/app/bloc/app_bloc.dart'
-    as _i26;
 import 'package:sportsflow/presentation/features/core/blocs/auth_bloc/auth_bloc.dart'
-    as _i28;
+    as _i26;
 import 'package:sportsflow/presentation/features/core/blocs/locale_bloc/locale_bloc.dart'
-    as _i34;
-import 'package:sportsflow/presentation/features/core/blocs/theme_bloc/theme_bloc.dart'
     as _i33;
+import 'package:sportsflow/presentation/features/core/blocs/theme_bloc/theme_bloc.dart'
+    as _i32;
 import 'package:sportsflow/presentation/features/login/bloc/auth_bloc.dart'
     as _i4;
 import 'package:sportsflow/presentation/features/main_navigation/bloc/main_navigation_bloc.dart'
@@ -130,37 +128,33 @@ extension GetItInjectableX on _i1.GetIt {
               password: gh<String>(),
               name: gh<String>(),
             ));
-    gh.factory<_i26.AppBloc>(() => _i26.AppBloc(
-          getUserUseCase: gh<_i27.GetUserUseCase>(),
-          listenToAuthStatusUseCase: gh<_i16.ListenToAuthStatusUseCase>(),
-        ));
-    gh.factory<_i28.AuthBloc>(() => _i28.AuthBloc(
+    gh.factory<_i26.AuthBloc>(() => _i26.AuthBloc(
           getUserUseCase: gh<_i27.GetUserUseCase>(),
           listenToAuthStatusUseCase: gh<_i27.ListenToAuthStatusUseCase>(),
         ));
-    gh.lazySingleton<_i29.ListenToLocaleUseCase>(() =>
-        _i29.ListenToLocaleUseCase(repository: gh<_i17.SettingsRepository>()));
-    gh.lazySingleton<_i30.ListenToThemeModeUseCase>(() =>
-        _i30.ListenToThemeModeUseCase(
+    gh.lazySingleton<_i28.ListenToLocaleUseCase>(() =>
+        _i28.ListenToLocaleUseCase(repository: gh<_i17.SettingsRepository>()));
+    gh.lazySingleton<_i29.ListenToThemeModeUseCase>(() =>
+        _i29.ListenToThemeModeUseCase(
             repository: gh<_i17.SettingsRepository>()));
-    gh.lazySingleton<_i31.SaveLocaleUseCase>(() =>
-        _i31.SaveLocaleUseCase(repository: gh<_i17.SettingsRepository>()));
-    gh.lazySingleton<_i32.SaveThemeModeUseCase>(() =>
-        _i32.SaveThemeModeUseCase(repository: gh<_i17.SettingsRepository>()));
-    gh.factory<_i33.ThemeBloc>(() => _i33.ThemeBloc(
-          listenToThemeModeUseCase: gh<_i30.ListenToThemeModeUseCase>(),
-          saveThemeModeUseCase: gh<_i32.SaveThemeModeUseCase>(),
+    gh.lazySingleton<_i30.SaveLocaleUseCase>(() =>
+        _i30.SaveLocaleUseCase(repository: gh<_i17.SettingsRepository>()));
+    gh.lazySingleton<_i31.SaveThemeModeUseCase>(() =>
+        _i31.SaveThemeModeUseCase(repository: gh<_i17.SettingsRepository>()));
+    gh.factory<_i32.ThemeBloc>(() => _i32.ThemeBloc(
+          listenToThemeModeUseCase: gh<_i29.ListenToThemeModeUseCase>(),
+          saveThemeModeUseCase: gh<_i31.SaveThemeModeUseCase>(),
         ));
-    gh.factory<_i34.LocaleBloc>(() => _i34.LocaleBloc(
-          listenToLocaleUseCase: gh<_i29.ListenToLocaleUseCase>(),
-          saveLocaleUseCase: gh<_i31.SaveLocaleUseCase>(),
+    gh.factory<_i33.LocaleBloc>(() => _i33.LocaleBloc(
+          listenToLocaleUseCase: gh<_i28.ListenToLocaleUseCase>(),
+          saveLocaleUseCase: gh<_i30.SaveLocaleUseCase>(),
         ));
     return this;
   }
 }
 
-class _$RouterModule extends _i35.RouterModule {}
+class _$RouterModule extends _i34.RouterModule {}
 
-class _$BlocModule extends _i35.BlocModule {}
+class _$BlocModule extends _i34.BlocModule {}
 
-class _$ExternalModule extends _i35.ExternalModule {}
+class _$ExternalModule extends _i34.ExternalModule {}

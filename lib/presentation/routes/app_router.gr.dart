@@ -21,22 +21,6 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const HomePage(),
       );
     },
-    SystemFailureRoute.name: (routeData) {
-      final args = routeData.argsAs<SystemFailureRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: SystemFailurePage(
-          key: args.key,
-          errorMessage: args.errorMessage,
-        ),
-      );
-    },
-    SplashRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const SplashPage(),
-      );
-    },
     MainNavigationWrapperRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -55,6 +39,22 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const OnboardingPage(),
       );
     },
+    SystemFailureRoute.name: (routeData) {
+      final args = routeData.argsAs<SystemFailureRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SystemFailurePage(
+          key: args.key,
+          errorMessage: args.errorMessage,
+        ),
+      );
+    },
+    SplashRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SplashPage(),
+      );
+    },
   };
 }
 
@@ -68,6 +68,48 @@ class HomeRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [MainNavigationWrapperPage]
+class MainNavigationWrapperRoute extends PageRouteInfo<void> {
+  const MainNavigationWrapperRoute({List<PageRouteInfo>? children})
+      : super(
+          MainNavigationWrapperRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MainNavigationWrapperRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [AuthenticationPage]
+class AuthenticationRoute extends PageRouteInfo<void> {
+  const AuthenticationRoute({List<PageRouteInfo>? children})
+      : super(
+          AuthenticationRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AuthenticationRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [OnboardingPage]
+class OnboardingRoute extends PageRouteInfo<void> {
+  const OnboardingRoute({List<PageRouteInfo>? children})
+      : super(
+          OnboardingRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'OnboardingRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -120,48 +162,6 @@ class SplashRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SplashRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [MainNavigationWrapperPage]
-class MainNavigationWrapperRoute extends PageRouteInfo<void> {
-  const MainNavigationWrapperRoute({List<PageRouteInfo>? children})
-      : super(
-          MainNavigationWrapperRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'MainNavigationWrapperRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [AuthenticationPage]
-class AuthenticationRoute extends PageRouteInfo<void> {
-  const AuthenticationRoute({List<PageRouteInfo>? children})
-      : super(
-          AuthenticationRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'AuthenticationRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [OnboardingPage]
-class OnboardingRoute extends PageRouteInfo<void> {
-  const OnboardingRoute({List<PageRouteInfo>? children})
-      : super(
-          OnboardingRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'OnboardingRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
