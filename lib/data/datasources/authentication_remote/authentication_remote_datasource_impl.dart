@@ -43,10 +43,8 @@ class AuthenticationRemoteDataSourceImpl
 
   @override
   Stream<AuthStateEntity> get authState {
-    print('listenToAuthStatus');
     return remoteDataSource.auth.onAuthStateChange
         .asyncMap<AuthStateEntity>((event) {
-      print('authStateChange');
       UserEntity? user;
       if (event.session?.user != null) {
         user = _userMapper.toEntity(event.session!.user);

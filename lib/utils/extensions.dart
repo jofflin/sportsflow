@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localized_locales/flutter_localized_locales.dart';
+// import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'package:intl/intl.dart';
 import 'package:sportsflow/resources/localization/app_localization.dart';
 
@@ -56,8 +56,8 @@ extension LocaleExtensions on Locale {
     }
   }
 
-  String nameTranslated(BuildContext context) {
-    print(languageCode);
-    return LocaleNames.of(context)!.nameOf(languageCode)!.capitalize();
-  }
+  // String nameTranslated(BuildContext context) {
+  //   print(languageCode);
+  //   return LocaleNames.of(context)!.nameOf(languageCode)!.capitalize();
+  // }
 }

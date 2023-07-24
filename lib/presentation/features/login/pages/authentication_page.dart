@@ -11,7 +11,6 @@ class AuthenticationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('AuthenticationPage');
     return BlocProvider(
       create: (context) => getDependency<AuthBloc>()..add(const Started()),
       child: GestureDetector(

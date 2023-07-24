@@ -1,11 +1,11 @@
 /// Make sure to import `auto_route` and `material` (required)
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:sportsflow/presentation/features/core/pages/splash_page.dart';
+import 'package:sportsflow/presentation/features/core/pages/systemfailure_page.dart';
 import 'package:sportsflow/presentation/features/onboarding/pages/onboarding_page.dart';
 import 'package:sportsflow/presentation/features/main_navigation/pages/pages.dart';
 import 'package:sportsflow/presentation/features/login/login.dart';
-
-import '../../demo_home.dart';
 
 part 'app_router.gr.dart';
 
@@ -41,7 +41,7 @@ class AppRouter extends _$AppRouter {
 
 var mainNavigationRouterGroup = AutoRoute(
   path: '/',
-  page: HomeRoute.page,
+  page: OnboardingRoute.page,
   children: [
     RedirectRoute(path: '', redirectTo: 'home'),
     // AutoRoute(
