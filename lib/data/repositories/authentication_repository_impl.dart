@@ -10,7 +10,6 @@ import 'package:sportsflow/domain/entities/authentication/auth_state.dart';
 import 'package:sportsflow/domain/entities/exceptions/exceptions.dart';
 import 'package:sportsflow/domain/entities/user/current_user.dart';
 import 'package:sportsflow/domain/repositories/authentication_repository.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../domain/entities/failures/failures.dart';
 

@@ -5,7 +5,7 @@ import 'package:sportsflow/presentation/features/core/pages/splash_page.dart';
 import 'package:sportsflow/presentation/features/core/pages/systemfailure_page.dart';
 import 'package:sportsflow/presentation/features/onboarding/pages/onboarding_page.dart';
 import 'package:sportsflow/presentation/features/main_navigation/pages/pages.dart';
-import 'package:sportsflow/presentation/features/login/login.dart';
+import 'package:sportsflow/presentation/features/signin/signin.dart';
 
 part 'app_router.gr.dart';
 
@@ -19,7 +19,7 @@ class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(page: SplashRoute.page, initial: true),
-        AutoRoute(path: '/auth', page: AuthenticationRoute.page),
+        AutoRoute(path: '/signin', page: SignInRoute.page),
         AutoRoute(
           path: '/onboarding',
           page: OnboardingRoute.page,

@@ -1,9 +1,10 @@
-// import 'package:auto_route/auto_route.dart';
-// import 'package:flutter/material.dart';
-// import 'package:sportsflow/design-system/components/components.dart';
-// import 'package:sportsflow/design-system/tokens/borders.dart';
-// import 'package:sportsflow/design-system/tokens/colors.dart';
-// import 'package:sportsflow/presentation/routes/app_router.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sportsflow/dependency_injection.dart';
+import 'package:sportsflow/presentation/features/signin/bloc/signin_bloc.dart';
+
+import '../widgets/login_form.dart';
 
 // @RoutePage()
 // class SignInPage extends StatelessWidget {
@@ -119,27 +120,21 @@
 //   }
 // }
 
-// import 'package:flutter/material.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:sportsflow/presentation/features/login/bloc/auth_bloc.dart';
-// import 'package:sportsflow/presentation/features/login/widgets/login_form.dart';
+@RoutePage()
+class SignInPage extends StatelessWidget {
+  const SignInPage({super.key});
 
-// class LoginPage extends StatelessWidget {
-//   const LoginPage({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return GestureDetector(
-//       onTap: () => WidgetsBinding.instance.focusManager.primaryFocus?.unfocus(),
-//       child: Scaffold(
-//         appBar: AppBar(
-//           title: const Text('Sign In Form'),
-//         ),
-//         body: BlocProvider(
-//           create: (context) => AuthBloc(),
-//           child: const LoginForm(),
-//         ),
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Login')),
+      body: Padding(
+        padding: const EdgeInsets.all(12),
+        child: BlocProvider(
+          create: (context) => getDependency<SigninBloc>(),
+          child: const LoginForm(),
+        ),
+      ),
+    );
+  }
+}

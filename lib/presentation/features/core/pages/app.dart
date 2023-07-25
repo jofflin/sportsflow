@@ -61,7 +61,7 @@ class App extends StatelessWidget {
                       const Duration(seconds: 2),
                       () {
                         getDependency<AppRouter>().replace(
-                          const AuthenticationRoute(),
+                          const SignInRoute(),
                         );
                       },
                     ),

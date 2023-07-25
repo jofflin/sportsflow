@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:dartz/dartz.dart';
+import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
+import 'package:sportsflow/domain/entities/failures/failures.dart';
 import 'package:sportsflow/domain/repositories/repositories.dart';
 
 import '../../../architecture/architecture.dart';
@@ -10,27 +12,26 @@ import '../../entities/user/current_user.dart';
 @lazySingleton
 class SignInWithEmailUseCase
     extends UseCase<UserEntity, SignInWithEmailUserUseCaseParams> {
-  final String email;
-  final String password;
   final AuthenticationRepository repository;
   SignInWithEmailUseCase({
     required this.repository,
-    required this.email,
-    required this.password,
   });
 
   @override
   FutureOr<Either<Failure, UserEntity>> call(
       SignInWithEmailUserUseCaseParams params) {
-    return repository.signInWithCredentials(email, password);
+    return repository.signInWithCredentials(params.email, params.password);
   }
 }
 
-class SignInWithEmailUserUseCaseParams {
+class SignInWithEmailUserUseCaseParams extends Equatable {
   final String email;
   final String password;
-  SignInWithEmailUserUseCaseParams({
+  const SignInWithEmailUserUseCaseParams({
     required this.email,
     required this.password,
   });
+
+  @override
+  List<Object?> get props => [email, password];
 }

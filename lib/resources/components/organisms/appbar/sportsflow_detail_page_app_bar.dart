@@ -25,7 +25,7 @@ class SportsFlowDetailPageAppBar extends StatelessWidget
       centerTitle: false,
       automaticallyImplyLeading: true,
       leading: IconButton(
-        icon: Icon(
+        icon: const Icon(
           Icons.arrow_back,
           color: SFColors.onSurfaceColor,
         ),

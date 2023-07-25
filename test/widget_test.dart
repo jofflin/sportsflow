@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:sportsflow/main.dart';
-import 'package:sportsflow/presentation/features/app/pages/pages.dart';
+import 'package:sportsflow/presentation/features/core/pages/app.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

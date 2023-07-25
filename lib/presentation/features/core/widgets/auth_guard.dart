@@ -18,7 +18,7 @@ class AuthGuard extends StatelessWidget {
       listener: (context, state) {
         state.maybeWhen(
           unauthenticated: () => getDependency<AppRouter>().replace(
-            const AuthenticationRoute(),
+            const SignInRoute(),
           ),
           orElse: () {},
         );
